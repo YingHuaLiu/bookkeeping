@@ -8,28 +8,34 @@ import {
 import Tags from './views/tag';
 import Money from 'views/money';
 import Statistics from './views/statistics';
+import styled from 'styled-components';
 
+const AppWrapper = styled.div`
+  color: #333;
+`;
 
 export default function App() {
   return (
-    <Router>
-      <Switch>
-        <Route path="/tags">
-          <Tags/>
-        </Route>
-        <Route path="/money">
-          <Money/>
-        </Route>
-        <Route path="/statistics">
-          <Statistics/>
-        </Route>
-        {/*默认路由*/}
-        <Redirect exact from='/' to='/money'/>
-        <Route path='*'>
-          <NoMatch/>
-        </Route>
-      </Switch>
-    </Router>
+    <AppWrapper>
+      <Router>
+        <Switch>
+          <Route path="/tags">
+            <Tags/>
+          </Route>
+          <Route path="/money">
+            <Money/>
+          </Route>
+          <Route path="/statistics">
+            <Statistics/>
+          </Route>
+          {/*默认路由*/}
+          <Redirect exact from='/' to='/money'/>
+          <Route path='*'>
+            <NoMatch/>
+          </Route>
+        </Switch>
+      </Router>
+    </AppWrapper>
   );
 }
 
