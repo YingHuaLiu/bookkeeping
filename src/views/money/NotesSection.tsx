@@ -21,15 +21,15 @@ const Wrapper = styled.section`
   }
 `;
 
-const NoteSection:React.FC=()=>{
-  const [note,setNote]=useState<string>('')
-  const refInput=useRef<HTMLInputElement>(null)
-  const onBlur=()=>{
-    if(refInput.current){
-      setNote(refInput.current.value)
+const NoteSection: React.FC = () => {
+  const [note, setNote] = useState<string>('');
+  const refInput = useRef<HTMLInputElement>(null);
+  const onBlur = () => {
+    if (refInput.current) {
+      setNote(refInput.current.value);
       console.log(refInput.current.value);
     }
-  }
+  };
   return (
     <Wrapper>
       <label>
@@ -45,7 +45,7 @@ const NoteSection:React.FC=()=>{
                onBlur={onBlur}/>
       </label>
     </Wrapper>
-  )
-}
+  );
+};
 
-export {NoteSection}
+export {NoteSection};

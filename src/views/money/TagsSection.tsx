@@ -32,8 +32,9 @@ const Wrapper = styled.section`
     margin-top: 8px;
   }
 `;
+type Props={selected:string[]}
 
-const TagsSection: React.FC = () => {
+const TagsSection: React.FC<Props> = (props) => {
   const [tags, setTags] = useState<string[]>(['衣', '食', '住', '行']);
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const onAddTag = () => {
