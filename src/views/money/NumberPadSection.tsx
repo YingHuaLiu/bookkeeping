@@ -23,7 +23,10 @@ const NumberPadSection: React.FC<Props> = (props) => {
     const text = (e.target as HTMLButtonElement).textContent;
     if (text === null) return;
     if (text === 'OK') {
-
+      if (props.onOk) {
+        props.onOk();
+      }
+      return;
     };
     setOutput(generateOutput(text, output));
   };
