@@ -1,6 +1,6 @@
 import React from 'react';
 import {useTags} from '../useTags';
-import {useParams} from 'react-router-dom';
+import {useParams, useHistory} from 'react-router-dom';
 import Layout from '../components/Layout';
 import Icon from '../components/Icon';
 import {Button} from '../components/Button';
@@ -36,18 +36,25 @@ const Tag: React.FC = () => {
                type={'text'}
                placeholder={'标签名'}
                value={tag.name}
-               onChange={e => updateTag(tag.id, {name: e.target.value})}/>
-      </InputWrapper>;
+               onChange={e => updateTag(tag.id,  e.target.value)}/>
+      </InputWrapper>
       <Center>
         <Space/>
         <Button onClick={() => deleteTagById(tag.id)}>删除标签</Button>
       </Center>
     </div>
 )
+
+  const history=useHistory();
+  const onClickBack=()=>{
+    // window.history.back();
+    history.goBack();
+  }
+
   return (
     <Layout>
       <TopBar>
-        <Icon name={'left'}/>
+        <Icon name='left' className='frank' onClick={onClickBack}/>
         <span>编辑标签</span>
         <Icon/>
       </TopBar>
