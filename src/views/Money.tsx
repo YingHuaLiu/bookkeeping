@@ -43,10 +43,12 @@ function Money() {
                    onChange={tagIds => onChange({tagIds})}/>
       <NoteSection value={selected.note}
                    onChange={note => onChange({note})}/>
+
       <CategorySection value={selected.category}
                        onChange={category => onChange({category})}/>
+
       <NumberPadSection value={selected.amount}
-                        onChange={amount => onChange({amount})}
+                        onChange={value => onChange({amount: value})}
                         onOk={submit}/>
     </MyLayout>
   );

@@ -29,6 +29,7 @@ type Props = {
   value: '-' | '+',
   onChange: (value: '-' | '+') => void
 }
+
 const CategorySection: React.FC<Props> = (props) => {
   const categoryMap = {'-': '支出', '+': '收入'};
   type keys = keyof typeof categoryMap;
